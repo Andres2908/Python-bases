@@ -7,3 +7,14 @@ CREATE TABLE notas(
     PRIMARY KEY(id),
     CONSTRAINT fk_nota_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id)
 )ENGINE=InnoDB;
+
+CREATE TABLE notas(
+    id int(255 auto_increment not null,
+    nombre varchar(100),
+    apellidos varchar(200),
+    email varchar(60) not null,
+    password varchar(255) not null,
+    fecha date not null,
+    CONSTRAINT uq_email UNIQUE(email),
+    PRIMARY KEY(id)
+)ENGINE=InnoDB;
