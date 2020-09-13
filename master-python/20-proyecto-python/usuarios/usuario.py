@@ -40,7 +40,6 @@ class Usuario:
         
         #Consulta de usuario
         sql = "SELECT *FROM usuarios WHERE email = %s AND password = %s "
-
         
         #Cifrado de la constraseña
         cifrado = hashlib.sha256()

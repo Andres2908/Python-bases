@@ -4,7 +4,7 @@ class Acciones:
 
     def registro(self):
         
-        print("Perfecto vamos a registrarnos\n")
+        print("Perfecto vamos a registrarnos en el sistema\n")
         nombre = input("Cual es tu nombre? ")
         apellido = input("Cuales son tus apellidos? ")
         email = input("Cual es tu email? ")
@@ -33,9 +33,38 @@ class Acciones:
 
             if email == login[3]:
                 print(f'Binevenido {login[1]}, te has identificado en el sistema el día {login[5]}')
-        
+                self.proximasAcciones(login)
+
         except Exception as e:
             print(type(e))
-            print(type(e).__name__)
+            print(type(e).__name__) #Error en concreto
             print('Login incorrecto, intentalo mas tarde')
-           
+    
+
+    def proximasAcciones(self, usuario):
+        print(""" 
+        -Acciones disponibles:
+        -Crear nota          [1]
+        -Mostrar tus notas   [2]
+        -Eliminar nota       [3]
+        -salir               [4]
+        """)
+
+        accion = int(input(f'Qué quieres hacer ? '))
+
+        if accion == 1:
+            print('Vamos a crear')
+            self.proximasAcciones(usuario)
+
+        elif accion == 2:
+            print('Vamos a mostrar')
+            self.proximasAcciones(usuario)
+
+        elif accion == 3:
+            print('Vamos a eliminar')
+            self.proximasAcciones(usuario)
+
+        elif accion == 4:
+            print('Okey nos vemos en la próxima !! ')
+            exit()#Función para salir del programa 
+         
